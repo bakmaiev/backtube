@@ -2,22 +2,13 @@ import { ArrowLeft, Bell, Menu, Mic, Search, Upload, User } from "lucide-react";
 import logo from "../assets/logo.svg";
 import Button from "./Button";
 import { useState } from "react";
+import { useSidebarContext } from "../contexts/SidebarContext";
 const Header = () => {
   const [showSearchInput, setSearchInput] = useState(false);
   return (
     <header className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-4">
-      <div
-        className={`flex gap-4 items-center flex-shrink-0 ${
-          showSearchInput ? "hidden" : "flex"
-        }`}
-      >
-        <Button variant={"ghost"} size={"icon"}>
-          <Menu />
-        </Button>
-        <a href="/">
-          <img src={logo} alt="logo" className="h-8" />
-        </a>
-      </div>
+      <HeaderFirstSection hidden={showSearchInput} />
+
       <form
         className={`gap-4 flex-grow justify-center ${
           showSearchInput ? "flex" : "hidden md:flex"
@@ -72,5 +63,30 @@ const Header = () => {
     </header>
   );
 };
+
+type HeaderFirstSectionProps = {
+  hidden?: boolean;
+};
+
+export function HeaderFirstSection({
+  hidden = false,
+}: HeaderFirstSectionProps) {
+  const { toggle } = useSidebarContext();
+
+  return (
+    <div
+      className={`flex gap-4 items-center flex-shrink-0 ${
+        hidden ? "hidden" : "flex"
+      }`}
+    >
+      <Button onClick={toggle} variant={"ghost"} size={"icon"}>
+        <Menu />
+      </Button>
+      <a href="/">
+        <img src={logo} alt="logo" className="h-8" />
+      </a>
+    </div>
+  );
+}
 
 export default Header;
