@@ -6,7 +6,7 @@ import { useSidebarContext } from "../contexts/SidebarContext";
 const Header = () => {
   const [showSearchInput, setSearchInput] = useState(false);
   return (
-    <header className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-4">
+    <header className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-7">
       <HeaderFirstSection hidden={showSearchInput} />
 
       <form
@@ -75,7 +75,7 @@ export function HeaderFirstSection({
 
   return (
     <div
-      className={`flex gap-4 items-center flex-shrink-0 ${
+      className={`flex gap-2 sm:gap-4 items-center flex-shrink-0 ${
         hidden ? "hidden" : "flex"
       }`}
     >

@@ -34,7 +34,7 @@ export function Sidebar() {
   return (
     <>
       <aside
-        className={`sticky top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col ml-1 ${
+        className={`sticky top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col ml-1 max-sm:hidden ${
           isLargeOpen ? "lg:hidden" : "lg:flex"
         }`}
       >
@@ -54,11 +54,13 @@ export function Sidebar() {
         />
       )}
       <aside
-        className={`w-56 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden pb-4 flex-col gap-2 px-2 ${
-          isLargeOpen ? "lg:flex" : "lg:hidden"
-        } ${isSmallOpen ? "flex z-[999] bg-white max-h-screen" : "hidden"}`}
+        className={`w-66 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden pb-4 flex-col gap-2 pl-6 pr-2 ${
+          isLargeOpen ? "lg:flex " : "lg:hidden"
+        } ${
+          isSmallOpen ? "flex z-[999] bg-white max-h-screen pt-0.5" : "hidden"
+        }`}
       >
-        <div className="lg:hidden pt-2 pb-4 px-2 sticky top-0 bg-white">
+        <div className="lg:hidden pt-[7px] pb-4 px-1 mb-[1px] sticky top-0 bg-white">
           <HeaderFirstSection />
         </div>
         <LargeSidebarSection>
@@ -174,11 +176,11 @@ function SmallSidebarItem({ Icon, title, url }: SmallSidebarItemProps) {
       href={url}
       className={twMerge(
         buttonStyles({ variant: "ghost" }),
-        "py-4 px-1 flex flex-col items-center rounded-lg gap-1"
+        "py-3 px-1 flex flex-col items-center rounded-lg gap-1"
       )}
     >
       <Icon className="w-6 h-6" />
-      <div className="text-sm">{title}</div>
+      <div className="text-xs w-20 text-ellipsis text-center">{title}</div>
     </a>
   );
 }
