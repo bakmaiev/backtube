@@ -1,30 +1,30 @@
-# React + TypeScript + Vite
+# BackTube
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The clone of the YouTube Homepage
 
-Currently, two official plugins are available:
+![Backtube Preview](./src/assets/backtube-preview.jpg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## Expanding the ESLint configuration
+- **React:** A JavaScript library for building user interfaces.
+- **TypeScript:** A typed superset of JavaScript that compiles to plain JavaScript.
+- **Vite:** A fast build tool that provides a faster development experience for modern web projects.
+- **Tailwind CSS:** A utility-first CSS framework for rapidly building custom designs.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Running Locally
 
-- Configure the top-level `parserOptions` property like this:
+If you want to run the project locally, follow these steps:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+# Clone the repository
+git clone https://github.com/bakmaiev/backtube.git
+
+# Navigate to the project directory
+cd backtube
+
+# Install dependencies
+npm install
+
+# Start the local development server
+npm run dev
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
