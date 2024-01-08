@@ -27,7 +27,7 @@ const Header = () => {
           <input
             type="search"
             placeholder="Search"
-            className="border rounded-l-full border-secondary-border shadow-inner shadow-secondary py-1 px-4 text-lg w-full focus:border-amber-400 outline-none"
+            className="border rounded-l-full border-secondary-border shadow-inner shadow-secondary py-1 px-4 text-lg w-full focus:border-secondary-dark-hover outline-none"
           />
           <Button className="py-2 px-4 rounded-r-full border-secondary-border border border-1-0 flex-shrink-0">
             <Search />
