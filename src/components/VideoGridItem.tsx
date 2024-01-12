@@ -50,7 +50,7 @@ const VideoGridItem = ({
       onMouseEnter={() => setIsVideoPlaying(true)}
       onMouseLeave={() => setIsVideoPlaying(false)}
     >
-      <a href={`/watch?v=${id}`} className="relative aspect-video">
+      <a href={`/backtube/watch?v=${id}`} className="relative aspect-video">
         <img
           src={thumbnailUrl}
           alt={title}
@@ -70,7 +70,7 @@ const VideoGridItem = ({
         ></video>
       </a>
       <div className="flex gap-2">
-        <a href={`/@${channel.id}`} className="flex-shrink-0">
+        <a href={`/backtube/@${channel.id}`} className="flex-shrink-0">
           <img
             src={channel.profileUrl}
             alt={channel.name}
@@ -78,10 +78,13 @@ const VideoGridItem = ({
           />
         </a>
         <div className="flex flex-col">
-          <a href={`/watch?v=${id}`} className="font-bold">
+          <a href={`/backtube/watch?v=${id}`} className="font-bold">
             {title}
           </a>
-          <a href={`/@${channel.id}`} className="text-secondary-text text-sm">
+          <a
+            href={`/backtube/@${channel.id}`}
+            className="text-secondary-text text-sm"
+          >
             {channel.name}
           </a>
           <div className="text-secondary-text text-sm">

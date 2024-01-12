@@ -82,7 +82,7 @@ export function HeaderFirstSection({
       <Button onClick={toggle} variant={"ghost"} size={"icon"}>
         <Menu />
       </Button>
-      <a href="/">
+      <a href="/backtube">
         <img src={logo} alt="logo" className="h-8" />
       </a>
     </div>

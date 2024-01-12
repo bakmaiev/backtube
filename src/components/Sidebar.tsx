@@ -38,14 +38,18 @@ export function Sidebar() {
           isLargeOpen ? "lg:hidden" : "lg:flex"
         }`}
       >
-        <SmallSidebarItem Icon={Home} title="Home" url="/" />
-        <SmallSidebarItem Icon={Repeat} title="Shorts" url="/shorts" />
+        <SmallSidebarItem Icon={Home} title="Home" url="/backtube" />
+        <SmallSidebarItem Icon={Repeat} title="Shorts" url="/backtube/shorts" />
         <SmallSidebarItem
           Icon={Clapperboard}
           title="Subscriptions"
-          url="/subscriptions"
+          url="/backtube/subscriptions"
         />
-        <SmallSidebarItem Icon={Library} title="Library" url="/library" />
+        <SmallSidebarItem
+          Icon={Library}
+          title="Library"
+          url="/backtube/library"
+        />
       </aside>
       {isSmallOpen && (
         <div
@@ -64,11 +68,16 @@ export function Sidebar() {
           <HeaderFirstSection />
         </div>
         <LargeSidebarSection>
-          <LargeSidebarItem isActive IconOrImgUrl={Home} title="Home" url="/" />
+          <LargeSidebarItem
+            isActive
+            IconOrImgUrl={Home}
+            title="Home"
+            url="/backtube/"
+          />
           <LargeSidebarItem
             IconOrImgUrl={Clapperboard}
             title="Subscriptions"
-            url="/subscriptions"
+            url="/backtube/subscriptions"
           />
         </LargeSidebarSection>
         <hr />
@@ -76,29 +85,29 @@ export function Sidebar() {
           <LargeSidebarItem
             IconOrImgUrl={Library}
             title="Library"
-            url="/library"
+            url="/backtube/library"
           />
           <LargeSidebarItem
             IconOrImgUrl={History}
             title="History"
-            url="/history"
+            url="/backtube/history"
           />
           <LargeSidebarItem
             IconOrImgUrl={PlaySquare}
             title="Your Videos"
-            url="/your-videos"
+            url="/backtube/your-videos"
           />
           <LargeSidebarItem
             IconOrImgUrl={Clock}
             title="Watch Later"
-            url="/playlist?list=WL"
+            url="/backtube/playlist?list=WL"
           />
           {playlists.map((playlist) => (
             <LargeSidebarItem
               key={playlist.id}
               IconOrImgUrl={ListVideo}
               title={playlist.name}
-              url={`/playlist?list=${playlist.id}`}
+              url={`/backtube/playlist?list=${playlist.id}`}
             />
           ))}
         </LargeSidebarSection>
@@ -109,7 +118,7 @@ export function Sidebar() {
               key={subscription.id}
               IconOrImgUrl={subscription.imgUrl}
               title={subscription.channelName}
-              url={`/@${subscription.id}`}
+              url={`/backtube/@${subscription.id}`}
             />
           ))}
         </LargeSidebarSection>
@@ -118,45 +127,57 @@ export function Sidebar() {
           <LargeSidebarItem
             IconOrImgUrl={Flame}
             title="Trending"
-            url="/trending"
+            url="/backtube/trending"
           />
           <LargeSidebarItem
             IconOrImgUrl={ShoppingBag}
             title="Shopping"
-            url="/shopping"
+            url="/backtube/shopping"
           />
-          <LargeSidebarItem IconOrImgUrl={Music2} title="Music" url="/music" />
+          <LargeSidebarItem
+            IconOrImgUrl={Music2}
+            title="Music"
+            url="/backtube/music"
+          />
           <LargeSidebarItem
             IconOrImgUrl={Film}
             title="Movies & TV"
-            url="/movies-tv"
+            url="/backtube/movies-tv"
           />
-          <LargeSidebarItem IconOrImgUrl={Radio} title="Live" url="/live" />
+          <LargeSidebarItem
+            IconOrImgUrl={Radio}
+            title="Live"
+            url="/backtube/live"
+          />
           <LargeSidebarItem
             IconOrImgUrl={Gamepad2}
             title="Gaming"
-            url="/gaming"
+            url="/backtube/gaming"
           />
-          <LargeSidebarItem IconOrImgUrl={Newspaper} title="News" url="/news" />
+          <LargeSidebarItem
+            IconOrImgUrl={Newspaper}
+            title="News"
+            url="/backtube/news"
+          />
           <LargeSidebarItem
             IconOrImgUrl={Trophy}
             title="Sports"
-            url="/sports"
+            url="/backtube/sports"
           />
           <LargeSidebarItem
             IconOrImgUrl={Lightbulb}
             title="Learning"
-            url="/learning"
+            url="/backtube/learning"
           />
           <LargeSidebarItem
             IconOrImgUrl={Shirt}
             title="Fashion & Beauty"
-            url="/fashion-beauty"
+            url="/backtube/fashion-beauty"
           />
           <LargeSidebarItem
             IconOrImgUrl={Podcast}
             title="Podcasts"
-            url="/podcasts"
+            url="/backtube/podcasts"
           />
         </LargeSidebarSection>
       </aside>
