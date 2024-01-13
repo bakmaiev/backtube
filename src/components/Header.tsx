@@ -1,12 +1,13 @@
 import { ArrowLeft, Bell, Menu, Mic, Search, Upload, User } from "lucide-react";
 import logo from "../assets/logo.svg";
+import secondLogo from "../assets/logo-without-name.svg";
 import Button from "./Button";
 import { useState } from "react";
 import { useSidebarContext } from "../contexts/SidebarContext";
 const Header = () => {
   const [showSearchInput, setSearchInput] = useState(false);
   return (
-    <header className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-7">
+    <header className="flex gap-10 max-md:gap-4 lg:gap-20 justify-between pt-2 mb-6 mx-7">
       <HeaderFirstSection hidden={showSearchInput} />
 
       <form
@@ -75,15 +76,19 @@ export function HeaderFirstSection({
 
   return (
     <div
-      className={`flex gap-2 sm:gap-4 items-center flex-shrink-0 ${
+      className={`flex gap-1 sm:gap-4 items-center flex-shrink-0 ${
         hidden ? "hidden" : "flex"
       }`}
     >
       <Button onClick={toggle} variant={"ghost"} size={"icon"}>
         <Menu />
       </Button>
+
       <a href="/backtube">
-        <img src={logo} alt="logo" className="h-8" />
+        <img src={logo} alt="logo" className="h-8 max-sm:hidden" />
+      </a>
+      <a href="/backtube">
+        <img src={secondLogo} alt="logo" className="h-8 sm:hidden" />
       </a>
     </div>
   );
